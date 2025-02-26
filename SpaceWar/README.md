@@ -18,7 +18,9 @@ Este é um jogo 2D de nave espacial desenvolvido com **Pygame**, ideal para trei
 
 ## 🛠️ Como Executar  
 1. Acesse a pasta 'dist' e execute o jogo
-   
+
+ou
+
 2. Execute o código do jogo:
 ```bash
    pip install pygame, pyvidplayer2
