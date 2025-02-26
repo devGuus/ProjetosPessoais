@@ -1,7 +1,3 @@
-Aqui está um README.md para o seu jogo:  
-
----
-
 # 🚀 SpaceWar - Jogo em Pygame  
 
 ## 🕹️ Sobre o Projeto  
