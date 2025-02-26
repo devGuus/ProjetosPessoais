@@ -34,6 +34,9 @@ pyinstaller --onefile --noconsole main.py
 
 ## 📷 Preview  
 ![image](https://github.com/user-attachments/assets/b3084122-9915-4909-a042-a5da2bb194e5)
+
+---
+
 ![image](https://github.com/user-attachments/assets/98db1755-b567-45f3-b633-c56edaad2f35)
 
 
