@@ -29,7 +29,7 @@ ou
 ## 🚀 Gerando Executável  
 Se quiser criar um **.exe**, utilize o **PyInstaller**:  
 ```bash
-pyinstaller --onefile --windowed main.py
+pyinstaller --onefile --noconsole main.py
 ```  
 
 ## 📷 Preview  
