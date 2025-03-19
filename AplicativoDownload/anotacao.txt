@@ -1,0 +1,144 @@
+Framework utilizado:
+Flet: Capaz de criar interface gráficas multiplataformas (mobile e desktop)
+Com apenas uma aplicação já é capaz de fazer isso.
+1 - Criar um ambiente virtual
+
+2 - Instalações das dependencias (pip install flet // pip install pytubefix)
+
+3 - Criar um projeto com o flet{
+    No termina digite:
+        flet create <nome do seu projeto>
+}
+4 - Importe as bibliotecas {
+    from pytubefix import YouTube
+    import os
+}
+5 - Centralizar as informações{
+    page.vertical_alignment = ft.MainAxisAlignment.CENTER 
+    page.horizontal_alignment = ft.CrossAxisAlignment.CENTER
+}
+6 - Criação de um input para o link < https://flet.dev/docs/ >
+7 - Criar botão de download
+8 -  As criações devem ser passadas na lista para inserir em ordem 
+9 - Criação de um cabeçalho ->
+page.appbar = ft.AppBar(
+    title = "",
+    center_title=True,
+    bgcolor=ft.Colors.BLACK54,
+    actions=[
+        ft.Image(
+            src="",
+        )
+    ]
+)
+
+importacoes
+
+def main(page: ft.Page):
+page.title = ""
+page.vertical_alignment = ft.MainAxisAlignment.CENTER
+page.horizontal_alignment = ft.CrossAxisAlignment.CENTER
+
+entrada_usuario = ft.TextField(
+    label="Digite o link aqui!",
+    prefix_icon=ft.Icons.LINK,
+    width=300,
+    border_color=ft.Colors.WHITE,
+    border_radius=ft.border_radius.all(10),
+    border_width=2,
+)
+
+page.add(
+    ft.Column(
+        entrada_usuario, ...
+    )
+)
+page.update()
+
+ft.app(main)
+
+
+
+
+
+-------------------
+
+
+
+import flet as ft
+from pytubefix import YouTube
+import os
+
+def main(page: ft.Page):
+    page.title = "PANDASMP3"
+    page.vertical_alignment = ft.MainAxisAlignment.CENTER 
+    page.horizontal_alignment = ft.CrossAxisAlignment.CENTER
+    # Cabeçalho da pagina
+    page.appbar = ft.AppBar(
+        title = ft.Text("PandasMP3"),
+        center_title=True,
+        bgcolor=ft.Colors.BLACK54,
+        actions=[
+            ft.Image(
+                src='AppFastLink/src/assets/logo.png',
+                width=60,
+                height=60,
+                fit=ft.ImageFit.COVER,
+            )
+        ]
+)
+    
+    def baixar_video(entrada):
+        url = link_download.value.strip()
+        if not url:
+            status_text.value = "Por favor, inserir um link válido!"
+            page.update()
+            return
+        arquivo_download = "Downloads"
+        os.makedirs(arquivo_download, exist_ok=True) # Cria uma pasta para download
+        # Atualiza o status do download
+        status_text.value = "Baixando Vídeo..."
+        page.update()
+        # Variavel da url e inicia o download
+        yt = YouTube(url)
+        stream = yt.streams.get_highest_resolution()
+        # Direciona o download para a pasta
+        stream.download(output_path=arquivo_download)
+        # Atualiza o status do download
+        status_text.value = f"Download Concluido {arquivo_download}"
+        page.update()
+
+    # Input do link
+    link_download = ft.TextField(
+        label="Digite o link aqui!",
+        prefix_icon=ft.Icons.LINK,
+        width=300,
+        border_color=ft.Colors.WHITE,
+        border_radius=ft.border_radius.all(10),
+        border_width=2,
+    )
+    # Botão 'Baixar' para download
+    botao_download = ft.ElevatedButton(
+        text="Baixar",
+        width=300,
+        bgcolor=ft.Colors.RED,
+        color=ft.Colors.WHITE,
+        on_click=baixar_video,
+    )
+
+    status_text = ft.Text()
+
+    page.add(
+        ft.Column(
+            controls=[
+                link_download,
+                botao_download,
+                status_text,
+            ],
+            alignment=ft.MainAxisAlignment.CENTER,
+            horizontal_alignment=ft.CrossAxisAlignment.CENTER
+        )
+    )
+    page.update()
+
+ft.app(main, assets_dir="assets")

@@ -1,0 +1,27 @@
+@import url("./header.css");
+@import url("./download.css");
+
+:root{
+    --color-header: rgba(85, 85, 85, 0.182);
+    --color-body: rgb(110, 110, 110);
+
+    --txt-header: white;
+    --txt-logo: white;
+}
+
+a {
+    text-decoration: none;
+}
+
+*{
+    box-sizing: border-box;
+    margin: 0;
+}
+
+body{
+    min-width: 100%;
+    background-image: url("../assets/images/background.jpg");
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-color: var(--color-body);
+}

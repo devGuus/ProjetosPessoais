@@ -38,7 +38,6 @@ VERDE = (0, 255, 0)
 AZUL = (0, 0, 255)
 ROXO = (140, 4, 97)
 color_score = (255,215,0)
-color_pause = ()
 
 # Fonte personalizada (Press Start 2P)
 fonte_jogo = pygame.font.Font(caminho_relativo("data/Fonts/8-bit Arcade In.ttf"), 60)
@@ -82,6 +81,7 @@ video_menu = Video(caminho_relativo('data/movies/video_menu.mp4'))
 try:
     # Carregar imagens
     bg_image = pygame.image.load(caminho_relativo('data/imagens/bg_espaço_roxo.png'))
+    bg_image = pygame.transform.scale(bg_image(LARGURA, ALTURA))
     fundo_menu = pygame.image.load(caminho_relativo('data/imagens/imagem-fundo3.jpg'))
     # Redimensionar imagem do player
     nave_player = pygame.image.load(caminho_relativo('data/imagens/nave.png'))

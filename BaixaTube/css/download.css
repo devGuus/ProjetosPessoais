@@ -1,0 +1,63 @@
+.container-download{
+    max-width: 100%;
+    margin: 80px auto;
+    text-align: center;
+}
+
+.container-download h2{
+    color: var(--txt-logo);
+    font-family: Arial, sans-serif;
+    font-size: 60px;
+    letter-spacing: 10px;
+    font-weight: bold;
+}
+
+.container-download h2 span{
+    color: red;
+    font-weight: bolder;
+    letter-spacing: 0;
+}
+
+.container-download h3{
+    color: white;
+    font-family: Times;
+    font-size: 18px;
+    margin-top: 5px;
+}
+
+.container-download p{
+    color: white;
+    font-family: Times;
+    font-size: 17px;
+    margin-top: 25px;
+}
+
+#recebe-link{
+    width: 50%;
+    height: 60px;
+    border-radius: 10px;
+    font-size: 14px;
+    color: rgb(231, 231, 231);
+    border: 1px solid #505050;
+    margin-bottom: 10px;
+    margin-top: 25px;
+    margin-right: 5px;
+    padding: 5px 10px;
+    background-color: rgba(224, 224, 224, 0.185);
+} 
+
+.container-download input[type="button"]{
+    padding: 10px 20px;
+    border-radius: 5px;
+    font-size: 20px;
+    background: red;
+    color: white;
+    font-weight: bold;
+    border: none;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.container-download input[type="button"]:hover {
+    background: darkred;
+}

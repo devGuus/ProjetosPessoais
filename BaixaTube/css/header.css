@@ -1,0 +1,59 @@
+@import url("./global.css");
+
+.container-header{
+    display: flex;
+    align-items: center;    
+    max-width: 100%;
+    padding: 10px 20px;
+    justify-content: space-between;  
+    position: relative;
+    border: 5px;
+    background-color: var(--color-header);
+}
+
+.container-header .logo h1{
+    color: var(--txt-logo);
+}
+
+.header-center {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.container-header .header-center ul {
+    list-style: none;
+    display: flex;
+    gap: 25px;
+    margin: 0;
+    padding: 0;
+}
+
+.container-header .header-center ul li{
+    font-weight: bold;
+}
+
+.container-header .header-center ul li a{
+    text-decoration: none;  
+    font-family: Arial, sans-serif;
+    color: var(--txt-header);
+}
+
+.spanMP4{
+    color: rgb(209, 3, 3);
+    font-weight: bold;
+}
+
+.container-idioma{
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+}
+
+.select-idioma {
+    padding: 5px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
