@@ -23,23 +23,29 @@ def main(page: ft.Page):
 )
     
     def baixar_video(entrada):
-        url = link_download.value.strip()
+        url = link_download.value.strip() # Pegando a url e garantindo que não haja espaço 
         if not url:
             status_text.value = "Por favor, inserir um link válido!"
             page.update()
             return
-        formato = formato_dropdown.value  # Obtém a opção escolhida (mp3 ou mp4)
-        arquivo_download = "Downloads"
-        os.makedirs(arquivo_download, exist_ok=True)  # Cria a pasta de download se não existir
+        
+        # Obtém a opção escolhida (mp3 ou mp4)
+        formato = formato_dropdown.value  
+        
+        # Caminho para o download
+        arquivo_download = "C:/Users/gumar/Videos" 
+        
+        # Cria a pasta de download se não existir
+        os.makedirs(arquivo_download, exist_ok=True)  
 
         # Atualiza o status do download
         status_text.value = "Baixando..."
         page.update()
 
-        yt = YouTube(url)
+        yt = YouTube(url) # Criando o objeto para download
 
         if formato == "mp4":
-            stream = yt.streams.filter(progressive=True, file_extension="mp4").get_highest_resolution()
+            stream = yt.streams.get_highest_resolution() # Baixando na maior resolução
             arquivo = stream.download(output_path=arquivo_download)
             status_text.value = f"Download Concluído: {arquivo}"
         elif formato == "mp3":
@@ -54,6 +60,8 @@ def main(page: ft.Page):
             os.remove(arquivo)  # Remove o arquivo original de vídeo
 
             status_text.value = f"Download Concluído: {mp3_arquivo}"
+        else:
+            status_text.value = f"Selecione o Formato de Download!"
     
         page.update()
 
@@ -66,7 +74,7 @@ def main(page: ft.Page):
         border_radius=ft.border_radius.all(10),
         border_width=2,
     )
-
+    # Opções para download 
     formato_dropdown = ft.Dropdown(
         options=[
             ft.dropdown.Option("mp3", text="🎵 MP3"),
