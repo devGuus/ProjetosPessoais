@@ -46,8 +46,8 @@ def perguntarFormato():
 # URL do vídeo
 temp_url = input("Digite a URL do vídeo: ").strip()
 
-# Local onde o arquivo será salvo
-localArquivo = "C:/Users/gumar/Videos"
+# Local onde o arquivo será salvo (Coloque o seu diretório)
+localArquivo = "C:/Users/devguus/Videos"
 
 # Criar objeto YouTube
 yt = YouTube(temp_url)
@@ -61,7 +61,7 @@ perguntarFormato()
 O arquivo será salvo no caminho:
 
 ```
-C:/Users/gumar/Videos
+C:/Users/devguus/Videos
 ```
 
 Caso queira alterar o local de salvamento, modifique a variável `localArquivo` no código.
