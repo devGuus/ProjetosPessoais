@@ -1,81 +1,50 @@
-# Appfastlink app
+# PANDASMP3
 
-## Run the app
+PANDASMP3 é um aplicativo simples para baixar vídeos ou áudios do YouTube usando a biblioteca `pytubefix` e a interface gráfica `Flet`. O usuário pode inserir um link do YouTube, escolher o formato de download (MP3 ou MP4) e selecionar o diretório onde deseja salvar o arquivo.
 
-### uv
+## 🛠 Tecnologias Utilizadas
+- Python
+- Flet (para a interface gráfica)
+- Pytubefix (para baixar os vídeos/áudios do YouTube)
 
-Run as a desktop app:
+## 📥 Instalação
+Antes de executar o programa, instale as dependências necessárias:
 
-```
-uv run flet run
-```
-
-Run as a web app:
-
-```
-uv run flet run --web
+```sh
+pip install flet pytubefix
 ```
 
-### Poetry
+## 🚀 Como Usar
+1. Execute o script principal:
 
-Install dependencies from `pyproject.toml`:
+   ```sh
+   python nome_do_arquivo.py
+   ```
 
+2. No aplicativo:
+   - Insira a URL do vídeo do YouTube.
+   - Escolha o formato de download (MP3 ou MP4).
+   - Clique no botão "Selecionar Pasta e Baixar" e escolha o local onde deseja salvar o arquivo.
+   - Aguarde a conclusão do download.
+
+## 📂 Estrutura do Projeto
 ```
-poetry install
-```
-
-Run as a desktop app:
-
-```
-poetry run flet run
-```
-
-Run as a web app:
-
-```
-poetry run flet run --web
-```
-
-For more details on running the app, refer to the [Getting Started Guide](https://flet.dev/docs/getting-started/).
-
-## Build the app
-
-### Android
-
-```
-flet build apk -v
+📂 Projeto
+│── 📄 main.py  # Código principal do aplicativo
+│── 📂 assets   # Pasta para armazenar imagens e ícones
+│── 📄 README.md # Documentação do projeto
 ```
 
-For more details on building and signing `.apk` or `.aab`, refer to the [Android Packaging Guide](https://flet.dev/docs/publish/android/).
+## 🎯 Funcionalidades
+- Baixar vídeos do YouTube em MP3 ou MP4.
+- Selecionar o diretório de download antes de baixar o arquivo.
+- Interface intuitiva e moderna usando Flet.
 
-### iOS
+## 📌 Melhorias Futuras
+- Adicionar barra de progresso para acompanhar o download.
+- Implementar suporte para diferentes qualidades de áudio/vídeo.
+- Criar versão desktop executável.
 
-```
-flet build ipa -v
-```
+## 📝 Licença
+Este projeto é de código aberto e pode ser modificado conforme necessário. 🚀
 
-For more details on building and signing `.ipa`, refer to the [iOS Packaging Guide](https://flet.dev/docs/publish/ios/).
-
-### macOS
-
-```
-flet build macos -v
-```
-
-For more details on building macOS package, refer to the [macOS Packaging Guide](https://flet.dev/docs/publish/macos/).
-
-### Linux
-
-```
-flet build linux -v
-```
-
-For more details on building Linux package, refer to the [Linux Packaging Guide](https://flet.dev/docs/publish/linux/).
-
-### Windows
-
-```
-flet build windows -v
-```
-
-For more details on building Windows package, refer to the [Windows Packaging Guide](https://flet.dev/docs/publish/windows/).
